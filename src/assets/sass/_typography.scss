@@ -1,0 +1,86 @@
+%heading{
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-1{
+    @extend %heading;
+    font-size: 4.5rem;
+    color: $color-grey-light-1;
+    line-height: 1;
+}
+
+.heading-2{
+    @extend %heading;
+    font-size: 4rem;
+    font-style: italic;
+    line-height: 1;
+
+    &--light { color: $color-grey-light-1; }
+    &--dark { color: $color-grey-dark-1; }
+    
+}
+
+.heading-3{
+    @extend %heading;  
+    font-size: 1.6rem;
+    color: $color-primary;
+    text-transform: uppercase; 
+}
+
+.heading-4{
+    @extend %heading;
+    font-size: 1.9rem;
+
+    &--light { color: $color-grey-light-1; }
+    &--dark { color: $color-grey-dark-1; }
+}
+
+.btn{
+    &,
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 0;
+      transition: all 0.2s;
+      position: relative;
+      font-size: 1.8rem;
+      border: none;
+      cursor: pointer;
+      background-color: $color-primary;
+      color: #fff;
+    }
+
+    &:hover{
+        background-color: $color-primary-dark;
+    }
+
+    &-card{
+        font-size: 1.3rem;
+        font-family: $font-display;
+        display: grid;
+        grid-template-columns: min-content max-content;
+        align-items: center;
+        grid-column-gap:0.5rem;
+        transition: all 0.2s;
+        font-weight: 100;
+        background-color: transparent;
+        color: #000;
+
+        &:hover {
+            color: $color-primary;
+            background-color: transparent;
+            img{
+                transition: all 0.2s;
+                filter: invert(99%) sepia(98%) saturate(5159%) hue-rotate(305deg) brightness(81%) contrast(91%);
+            }
+        }
+
+        & > img{
+            margin-bottom:1px;
+        }
+    }
+}

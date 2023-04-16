@@ -1,0 +1,103 @@
+.basket{
+    grid-column: center-start/center-end;
+    margin: 5rem 0;
+
+    display: grid;
+    grid-template-columns:  minmax(35rem, 1fr) minmax(15rem, 30rem);
+    grid-gap: 5rem;
+    height: fit-content;
+
+    @media only screen and (max-width: $bp-medium){
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    }
+
+
+    &__title{
+        grid-column: 1/-1;
+        color: #000;
+    }
+
+    &__items{
+        background-color: $color-grey-light-1;
+        padding: 2rem;
+        height: fit-content;
+    }
+
+    &__item{
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        grid-gap: 1rem;
+
+        &:first-child{
+            margin-top: 1rem;
+        }
+
+        &:not(:last-child){
+            border-bottom: 1px solid $color-grey-light-1;
+        }
+
+        &__img{
+           padding: 2rem;
+           width: 60%;
+        }
+
+        &__btn{
+            background-color: transparent;
+            color: red;
+            font-size: 1.3rem;
+            text-transform: none;
+            padding: 0rem;
+            justify-self: flex-start;
+            transition: all .2s;
+
+            &:hover{
+                background-color: transparent;
+                transform: translateY(-5%);
+            }
+        }
+
+        &__details{
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: 1;
+        }
+
+        &__name{
+            font-size: 1.6rem;
+            color: #000;
+            line-height: 1.2;
+        }
+
+        &__price{
+            padding: 2rem;
+            justify-self: end;
+        }
+    }
+}
+
+.checkout{
+    padding: 2rem;
+    border: 1px solid $color-grey-light-3;
+    height: fit-content;
+    display: grid;
+    grid-row-gap: 2rem;
+
+    &__total{
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        align-items: center;
+    }
+
+    &__btn{
+       background-color: rgb(176, 66, 66);
+       font-size: 1.5rem;
+       padding: 1.3rem;
+       width: 100%;
+       
+       &:hover{
+        background-color: rgb(149, 49, 49);
+       }
+    }
+}
